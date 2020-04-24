@@ -120,6 +120,49 @@ int8_t ws_common_regulatory_domain_config(protocol_interface_info_entry_t *cur, 
         } else {
             return -1;
         }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_CH) {
+        if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 7792;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 3) {
+            cur->ws_info->hopping_schdule.ch0_freq = 7794;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 4) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9206;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_250;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_PH) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9152;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9154;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_MY) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9192;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9194;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_AZ) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9152;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9154;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
     } else if (hopping_schdule->regulatory_domain == REG_DOMAIN_EU) {
         if (hopping_schdule->operating_class == 1) {
             hopping_schdule->ch0_freq = 8631;
@@ -133,6 +176,25 @@ int8_t ws_common_regulatory_domain_config(protocol_interface_info_entry_t *cur, 
         } else if (hopping_schdule->operating_class == 4) {
             hopping_schdule->ch0_freq = 8702;
             hopping_schdule->channel_spacing = CHANNEL_SPACING_200;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_SG) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 8661;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_100;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 8661;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 3) {
+            cur->ws_info->hopping_schdule.ch0_freq = 8663;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 4) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9202;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 5) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9204;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
         } else {
             return -1;
         }
@@ -156,6 +218,59 @@ int8_t ws_common_regulatory_domain_config(protocol_interface_info_entry_t *cur, 
         } else if (hopping_schdule->operating_class == 3) {
             hopping_schdule->ch0_freq = 9026;
             hopping_schdule->channel_spacing = CHANNEL_SPACING_600;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_HK) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9202;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9204;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_TH) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9202;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9204;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_VN) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9202;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9204;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_MX) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9022;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9024;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else {
+            return -1;
+        }
+    } else if (cur->ws_info->hopping_schdule.regulatory_domain == REG_DOMAIN_BZ) {
+        if (cur->ws_info->hopping_schdule.operating_class == 1) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9022;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_200;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 2) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9024;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_400;
+        } else if (cur->ws_info->hopping_schdule.operating_class == 3) {
+            cur->ws_info->hopping_schdule.ch0_freq = 9026;
+            cur->ws_info->hopping_schdule.channel_spacing = CHANNEL_SPACING_600;
         } else {
             return -1;
         }
@@ -200,6 +315,32 @@ uint16_t ws_common_channel_number_calc(uint8_t regulatory_domain, uint8_t operat
         } else if (operating_class == 2) {
             return 16;
         }
+    } else if (regulatory_domain == REG_DOMAIN_CH) {
+        if (operating_class == 2) {
+            return 39;
+        } else if (operating_class == 3) {
+            return 19;
+        } else if (operating_class == 4) {
+            return 16;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_PH) {
+        if (operating_class == 1) {
+            return 14;
+        } else if (operating_class == 2) {
+            return 7;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_MY) {
+        if (operating_class == 1) {
+            return 19;
+        } else if (operating_class == 2) {
+            return 10;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_AZ) {
+        if (operating_class == 1) {
+            return 64;
+        } else if (operating_class == 2) {
+            return 32;
+        }
     } else if (regulatory_domain == REG_DOMAIN_EU) {
         if (operating_class == 1) {
             return 69;
@@ -209,6 +350,18 @@ uint16_t ws_common_channel_number_calc(uint8_t regulatory_domain, uint8_t operat
             return 55;
         } else if (operating_class == 4) {
             return 27;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_SG) {
+        if (operating_class == 1) {
+            return 29;
+        } else if (operating_class == 2) {
+            return 15;
+        } else if (operating_class == 3) {
+            return 7;
+        } else if (operating_class == 4) {
+            return 24;
+        } else if (operating_class == 5) {
+            return 12;
         }
     } else if (regulatory_domain == REG_DOMAIN_IN) {
         if (operating_class == 1) {
@@ -223,6 +376,38 @@ uint16_t ws_common_channel_number_calc(uint8_t regulatory_domain, uint8_t operat
             return 64;
         } else if (operating_class == 3) {
             return 42;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_HK) {
+        if (operating_class == 1) {
+            return 24;
+        } else if (operating_class == 2) {
+            return 12;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_TH) {
+        if (operating_class == 1) {
+            return 24;
+        } else if (operating_class == 2) {
+            return 12;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_VN) {
+        if (operating_class == 1) {
+            return 24;
+        } else if (operating_class == 2) {
+            return 12;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_MX) {
+        if (operating_class == 1) {
+            return 129;
+        } else if (operating_class == 2) {
+            return 64;
+        }
+    } else if (regulatory_domain == REG_DOMAIN_BZ) {
+        if (operating_class == 1) {
+            return 90;
+        } else if (operating_class == 2) {
+            return 43;
+        } else if (operating_class == 3) {
+            return 27;
         }
     } else if (regulatory_domain == REG_DOMAIN_JP) {
         if (operating_class == 1) {
